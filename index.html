@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autodesk Construction Cloud Mock</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+
+</head>
+<body>
+  <header>
+    <div class="logo">DASHBOARD MODELO BIM</div>
+    <div class="nav-links">
+      <span>Cuenta de Administrador</span>
+      <span>Presentacion Grafica</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="welcome">Le damos la bienvenida, Wilder</div>
+    <div class="subtitle">¿Qué desea hacer hoy?</div>
+
+    <div class="tabs">
+      <span class="tab">My Home</span>
+      <span class="tab active">Proyectos</span>
+      <span class="tab">Plantillas de proyecto</span>
+    </div>
+
+    <div class="controls">
+      <button class="create-button">+ Crear proyecto</button>
+      <input class="search" type="text" placeholder="Buscar proyectos por nombre o núm..." />
+    </div>
+
+  <div class="search-sort-bar">
+    <input type="text" id="buscador" placeholder="Buscar por nombre..." />
+    <button id="ordenarBtn">Ordenar A-Z</button>
+  </div>
+
+
+
+
+    <table class="project-table">
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Nombre</th>
+          <th>Número</th>
+          <th>Acceso por defecto</th>
+          <th>Cuenta</th>
+          <th>Creado el</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+    </table>
+  </main>
+  
+</body>
+
+<div id="confirmModal" class="modal">
+  <div class="modal-content">
+    <span id="cerrarConfirm" class="close">&times;</span>
+    <h2>¿Eliminar proyecto?</h2>
+    <p>Esta acción no se puede deshacer. ¿Deseas continuar?</p>
+    <div class="modal-footer">
+      <button id="confirmarEliminar" class="delete-btn">Sí, eliminar</button>
+      <button id="cancelarEliminar">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+    <!-- Modal Crear Proyecto -->
+<div id="modalProyecto" class="modal">
+  <div class="modal-content">
+    <span class="close" id="cerrarModal">&times;</span>
+    <h2>Crear proyecto</h2>
+
+    <form id="formProyecto">
+      <label>Nombre de proyecto *</label>
+      <input type="text" placeholder="Introducir un nombre de proyecto" required>
+
+      <label>Número de proyecto</label>
+      <input type="text" placeholder="Introduzca un número de proyecto">
+
+      <label>Cuenta</label>
+      <select required>
+        <option value="">Seleccione una cuenta</option>
+        <option>Cuenta 1</option>
+        <option>Cuenta 2</option>
+      </select>
+
+      <label>Tipo de proyecto *</label>
+      <select required>
+        <option value="">Seleccionar tipo</option>
+        <option>Subcontrato</option>
+        <option>Obra principal</option>
+        <option>Hospitales</option>
+        <option>Carreteras</option>
+        <option>Defensas Ribereñas</option>
+      </select>
+
+      <label>Plantilla</label>
+      <select>
+        <option value="">Seleccionar plantilla</option>
+        <option>Visor tipo 1</option>
+      </select>
+
+      <label>Dirección</label>
+      <input type="text" placeholder="Introduzca una ubicación">
+
+      <label>Zona horaria</label>
+      <select>
+        <option>(GMT-05:00) Lima/Quito</option>
+        <option>(GMT-03:00) Buenos Aires</option>
+      </select>
+
+      <div class="row">
+        <div>
+          <label>Fecha de inicio</label>
+          <input type="date">
+        </div>
+        <div>
+          <label>Fecha de finalización</label>
+          <input type="date">
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>Valor del proyecto</label>
+          <input type="number" placeholder="Introducir un valor">
+        </div>
+        <div>
+          <label>Moneda</label>
+          <select>
+            <option>USD</option>
+            <option>EUR</option>
+            <option>PEN</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="modal-buttons">
+        <button type="button" id="cancelarBtn">Cancelar</button>
+        <button type="submit" class="primary" disabled id="crearBtn">Crear proyecto</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+</html>
